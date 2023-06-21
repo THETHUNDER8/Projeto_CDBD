@@ -28,14 +28,14 @@ CREATE TABLE Pessoa (
 -- Create table Entidade_Aluno
 DROP TABLE if exists Aluno;
 CREATE TABLE Aluno (
-  Id INT unsigned AUTO_INCREMENT,
+  Id INT UNSIGNED AUTO_INCREMENT,
   Estatuto VARCHAR(100) NOT NULL CHECK (LENGTH(Estatuto) >= 2),
   Necessidades_esp BOOLEAN,
-  Valor_Inscricao INT CHECK (Valor <= 300),
+  Valor_Inscricao INT NOT NULL CHECK (Valor_Inscricao <= 300),
   Data_Inscricao DATETIME DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (Id),
   CONSTRAINT fk_aluno_pessoa FOREIGN KEY (Id) REFERENCES Pessoa (Id)
-)engine=innoDB;
+) ENGINE=InnoDB;
 
 -- Create table Entidade_Docente
 DROP TABLE if exists Docente;
@@ -53,7 +53,9 @@ CREATE TABLE Curso (
   Id INT UNSIGNED AUTO_INCREMENT,
   DescricaoCurso VARCHAR(100) NOT NULL CHECK (LENGTH(DescricaoCurso) >= 3),
   Sigla VARCHAR(100) NOT NULL CHECK (LENGTH(Sigla) >= 2),
-  PRIMARY KEY (Id)
+  IdAluno INT UNSIGNED NOT NULL,
+  PRIMARY KEY (Id),
+  CONSTRAINT fk_curso_aluno FOREIGN KEY (IdAluno) REFERENCES Aluno (Id)
 )engine=innoDB;
 
 -- Create table Entidade_UC
