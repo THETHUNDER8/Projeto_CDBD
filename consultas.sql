@@ -1,3 +1,11 @@
+/*
+TeSP_PSI_22_23_CDBD
+Base de dados de inscrição em exames
+Cláudio Moreira, estudade nº 2220881
+Hugo Gonçalves, estudante nº 2220891
+Rafael Teodoso, estudante nº 2220886
+*/
+
 -- Mostra os alunos no curso com sigla EI
 SELECT CONCAT(p.Nome, ' - ', a.Estatuto) AS Aluno_Estatuto, c.DescricaoCurso, c.Sigla
 FROM Pessoa p

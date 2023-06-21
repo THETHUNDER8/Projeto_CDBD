@@ -1,9 +1,9 @@
 /*
 TeSP_PSI_22_23_CDBD
-Sistema de Informação para a Gestão de Arrendamentos da Empresa 
-Imobiliária "Casa de Sonho"
-Carlos Ribeiro Alves Fictício, estudante n.º 2120012
-Rita Maria Carreira Hipotética, estudante n.º 2120013
+Base de dados de inscrição em exames
+Cláudio Moreira, estudade nº 2220881
+Hugo Gonçalves, estudante nº 2220891
+Rafael Teodoso, estudante nº 2220886
 */
 
 -- Create database

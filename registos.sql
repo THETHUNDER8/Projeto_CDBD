@@ -1,4 +1,11 @@
--- Populate table Pessoa
+/*
+TeSP_PSI_22_23_CDBD
+Base de dados de inscrição em exames
+Cláudio Moreira, estudade nº 2220881
+Hugo Gonçalves, estudante nº 2220891
+Rafael Teodoso, estudante nº 2220886
+*/
+
 INSERT INTO Pessoa (Nome, Morada, Telemovel, Email, Nif, DtaNascimento)
 VALUES
   ('João Silva', 'Rua A, Lisboa', 987654123, 'joao@exemplo.com', 923456789, '1990-01-01'),
@@ -10,7 +17,7 @@ VALUES
   ('Ricardo Costa', 'Rua G, Évora', 987654000, 'ricardo@exemplo.com', 921654987, '1991-11-30'),
   ('Carla Mendes', 'Rua H, Aveiro', 987654876, 'carla@exemplo.com', 941852963, '1994-08-12');
 
--- Populate table Aluno
+
 INSERT INTO Aluno (Estatuto, Necessidades_esp, Valor_Inscricao, Data_Inscricao)
 VALUES
   ('Estudate', 0, 200, NOW()),
@@ -22,7 +29,7 @@ VALUES
   ('Estudante Trabalhador', 0, 200, NOW()),
   ('Estudate', 1, 250, NOW());
 
--- Populate table Docente
+
 INSERT INTO Docente (Habilitacoes, Cacifo)
 VALUES
   ('Licenciatura', 101),
@@ -34,7 +41,7 @@ VALUES
   ('Licenciatura', 107),
   ('Mestrado', 108);
 
--- Populate table Curso
+
 INSERT INTO Curso (DescricaoCurso, Sigla, IdAluno)
 VALUES
   ('Engenharia Informática', 'EI', 1),
@@ -46,7 +53,7 @@ VALUES
   ('Medicina', 'MED', 7),
   ('Design Gráfico', 'DG', 8);
 
--- Populate table UC
+
 INSERT INTO UC (DescricaoUC, Sigla, ETCS, Ano, Semestre, IdCurso)
 VALUES
   ('Programação', 'PRG', 6, '1', '1', 1),
@@ -58,7 +65,7 @@ VALUES
   ('Anatomia', 'ANAT', 6, '3', '1', 7),
   ('Design de Comunicação', 'DC', 4, '3', '1', 8);
 
--- Populate table Inscricao_UC
+
 INSERT INTO Inscricao_UC (Status, Ano_Letivo, Data, IdUC, IdAluno)
 VALUES
   ('aprovado', 2022, NOW(), 1, 1),
@@ -70,7 +77,7 @@ VALUES
   ('aprovado', 2022, NOW(), 7, 7),
   ('nao aprovado', 2022, NOW(), 8, 8);
 
--- Populate table Exame
+
 INSERT INTO Exame (Epoca, Hora_Inicio_Exame, Hora_Final_Exame, Nome_UC, IdUC)
 VALUES
   ('Época Normal', '2023-05-15 09:00:00', '2023-05-15 12:00:00', 'Programação', 1),
@@ -82,7 +89,7 @@ VALUES
   ('Época Especial', '2023-06-05 10:30:00', '2023-06-05 11:30:00',  'Anatomia', 7),
   ('Época Normal', '2023-06-20 14:00:00', '2023-06-20 17:00:00',  'Design de Comunicação', 8);
 
--- Populate table Inscricao_Exame
+
 INSERT INTO incricao_exame (Nota, Valor, Data, IdExame, IdAluno)
 VALUES
   (15, 0, NOW(), 1, 1),
@@ -94,7 +101,7 @@ VALUES
   (14, 25, NOW(), 7, 7),
   (0, 0, NOW(), 8, 8);
 
--- Populate table DSD_Docente
+
 INSERT INTO dsd_docente (Data, IdDocente)
 VALUES
   (NOW(), 1),
@@ -106,7 +113,7 @@ VALUES
   (NOW(), 7),
   (NOW(), 8);
 
--- Populate table UC_DSD_Docente
+
 INSERT INTO uc_dsd_docente (IdUC, IdDSD_Docente)
 VALUES
   (1, 1),

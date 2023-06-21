@@ -1,3 +1,11 @@
+/*
+TeSP_PSI_22_23_CDBD
+Base de dados de inscrição em exames
+Cláudio Moreira, estudade nº 2220881
+Hugo Gonçalves, estudante nº 2220891
+Rafael Teodoso, estudante nº 2220886
+*/
+
 create user 'admin'@'localhost' identified by 'admin';
 create user 'aluno'@'localhost' identified by 'aluno';
 
