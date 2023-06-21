@@ -93,7 +93,6 @@ CREATE TABLE Exame (
   Epoca VARCHAR(100) NOT NULL CHECK (LENGTH(Epoca) >= 3),
   Hora_Inicio_Exame DATETIME,
   Hora_Final_Exame DATETIME,
-  Duracao FLOAT,
   Nome_UC VARCHAR(100) NOT NULL CHECK (LENGTH(Nome_UC) >= 3),
   IdUC INT unsigned NOT NULL,
   PRIMARY KEY (Id),
@@ -135,3 +134,21 @@ CONSTRAINT fk_UC_DSD_Docente_UC FOREIGN KEY (IdUC) REFERENCES UC (ID)
 )engine=innoDB;
 
 
+-- triggers para update Data_Inscricao na tabela Aluno
+DELIMITER $$
+CREATE TRIGGER tri_bi_dtaAluno
+BEFORE INSERT ON Aluno
+FOR EACH ROW
+BEGIN
+  SET NEW.Data_Inscricao = NOW();
+END;
+END$$
+
+-- Trigger para update Data na tabela Inscricao_UC
+DELIMITER $$
+CREATE TRIGGER trg_bu_Data_inscricao_uc
+BEFORE UPDATE ON Inscricao_UC
+FOR EACH ROW
+BEGIN
+  SET NEW.Data = NOW();
+END$$
