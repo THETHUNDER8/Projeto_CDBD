@@ -6,9 +6,11 @@ Hugo Gonçalves, estudante nº 2220891
 Rafael Teodoso, estudante nº 2220886
 */
 
+-- Criação de utilizadores
 create user 'admin'@'localhost' identified by 'admin';
 create user 'aluno'@'localhost' identified by 'aluno';
 
+-- gestão de acessos nos utilizadores
 select host,user From mysql.user;
 
 Grant all privileges on bdinscrições_em_exames.* to 'admin'@'localhost' with grant option;
